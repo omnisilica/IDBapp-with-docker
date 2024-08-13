@@ -1,0 +1,54 @@
+@use "./Palette.css";
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 0;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  border: 5px;
+
+  &:hover {
+    color: var(--avengers-orange);
+  }
+}
+
+.footer-dark {
+  background-color: var(--avengers-gray);
+  padding-top: 0.5%;
+  // width: 100%;
+  box-shadow: 0px 0px 50px var(--avengers-gray);
+}
+
+.item {
+  color: var(--avengers-white);
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  cursor: pointer;
+  line-height: 1.25rem;
+  line-clamp: 1;
+  font-size: 1rem;
+  white-space: wrap;
+  cursor: default;
+}
+
+.sticky-bottom {
+  height: 9vh;
+  color: var(--avengers-white);
+  box-shadow: 0px 50px 50px var(--avengers-gray);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lh-base {
+    height: 10vh;
+}
+
+.icon {
+    margin-left: .5rem;
+}

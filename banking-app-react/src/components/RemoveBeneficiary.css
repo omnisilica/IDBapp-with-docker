@@ -1,0 +1,15 @@
+.table thead  th {
+    background-color: #F28500;
+    color: white;
+
+}
+.beneficiariesNavWrapUp {
+    margin-bottom: 2rem;
+}
+table.table {
+    margin-left: 2rem;
+    width: 95%;
+}
+.grayRow th,.grayRow td{
+    background-color: rgb(201, 197, 197);
+}

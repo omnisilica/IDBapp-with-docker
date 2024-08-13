@@ -1,0 +1,55 @@
+/* table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1em;
+}
+
+table tr {
+  border: 1px solid lightgrey;
+}
+
+thead > tr > td {
+  color: var(--avengers-orange);
+  font-size: 2em;
+}
+
+table tr > * {
+  padding: 0.5em;
+}
+
+table tr > th {
+  width: 30%;
+}
+
+table tr > td:last-child {
+  text-align: right;
+} */
+
+.tableComplete {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1em;
+}
+
+.tableComplete tr {
+  border: 1px solid lightgrey;
+}
+
+thead > tr > td {
+  color: var(--avengers-orange);
+  font-size: 2em;
+}
+
+.tableComplete tr > * {
+  padding: 0.5em;
+}
+
+.tableComplete tr > th {
+  width: 30%;
+}
+
+.tableComplete tr > td:last-child {
+  text-align: right;
+}

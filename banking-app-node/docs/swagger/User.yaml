@@ -1,0 +1,169 @@
+/customers:
+  post:
+    summary: Create a new customer
+    tags: [Customers]
+    requestBody:
+      description: The customer to create
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/User"
+          example:
+            username: "string"
+            password: "string"
+            securityQuestion: "string"
+            securityAnswer: "string"
+            firstName: "string"
+            lastName: "string"
+            email: "user@example.com"
+            dateOfBirth: "2024-05-16"
+            phoneNumber: "string"
+            address:
+              address_one: "string"
+              address_two: "string"
+              city: "string"
+              province: "string"
+              postal_code: "AB"
+            income_type: "string"
+            income_amount: 0
+            __v: 0
+    responses:
+      201:
+        description: The created customer
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                user:
+                  $ref: "#/components/schemas/User"
+                status:
+                  example: 201
+                  type: number
+      400:
+        description: Error message
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: false
+                error:
+                  type: string
+                status:
+                  type: number
+                  example: 400
+      500:
+        description: Error message
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: false
+                error:
+                  type: string
+                status:
+                  type: number
+                  example: 500
+  get:
+    summary: Get all customers
+    tags: [Customers]
+    responses:
+      200:
+        description: The list of customers
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                customers:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/User"
+                status:
+                  example: 200
+                  type: number
+      500:
+        description: Error message
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: false
+                error:
+                  type: string
+                status:
+                  type: number
+                  example: 500
+/customers/{customerId}:
+  get:
+    summary: Get a customer by ID
+    tags: [Customers]
+    parameters:
+      - name: customerId
+        in: path
+        required: true
+        description: The ID of the customer to retrieve
+        schema:
+          type: string
+    responses:
+      200:
+        description: The customer
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: true
+                customer:
+                  $ref: "#/components/schemas/User"
+                status:
+                  example: 200
+                  type: number
+      404:
+        description: Error message
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: false
+                error:
+                  type: string
+                status:
+                  type: number
+                  example: 404
+      500:
+        description: Error message
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: boolean
+                  example: false
+                error:
+                  type: string
+                status:
+                  type: number
+                  example: 500

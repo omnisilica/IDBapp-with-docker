@@ -1,0 +1,63 @@
+.tfr-detail-edit-heading {
+    display: flex;
+    gap: 20px;
+}
+
+.tfr-edit-link {
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    margin: 0;
+	padding: 1;
+    padding-top: 0;
+    margin-bottom: 1rem;
+    text-align: left;
+
+}
+.tfr-edit-link:hover {
+    background-color: rgb(221, 220, 220);
+}
+
+.tfr-subtitle {
+    font-size: 1rem;
+    color: #757575;
+    padding-bottom: 2rem;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+
+.tfr-table {
+    max-width: 35em;
+
+}
+.tfr-table>.table>tbody>tr {
+    background-color: transparent;
+    border-bottom: 1px solid #dee2e6;
+}
+.tfr-table>.table>tbody>.tfr-last-row {
+    border-bottom: none;
+}
+.tfr-table>.table>tbody>tr>td {
+    background-color: transparent;
+    border: none;
+}
+.tfr-table-heading {
+    font-size: 14px;
+    opacity: 0.7;
+}
+.tfr-table-row-top {
+    margin-top: 10px;
+}
+.tfr-table-row-bottom {
+    margin-bottom: 10px;
+}
+
+.tfr-bold {
+    font-weight: bold;
+}
+.tfr-align-right {
+    text-align: right;
+}
+

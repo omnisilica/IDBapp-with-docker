@@ -1,0 +1,131 @@
+swagger: "2.0"
+info:
+  description: "API for Employee operations"
+  version: "1.0.0"
+  title: "Employee API"
+host: "localhost:3000"
+basePath: "/"
+schemes:
+  - "http"
+paths:
+  /:
+    get:
+      summary: "Test Endpoint"
+      tags: [Employees]
+      description: "Returns a simple message to indicate the API is working."
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            type: "object"
+            properties:
+              message:
+                type: "string"
+  /create:
+    post:
+      summary: "Create Employee"
+      tags: [Employees]
+      description: "Creates a new employee and adds them to the database."
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Employee object that needs to be added to the store"
+          required: true
+          schema:
+            type: "object"
+            required:
+              - username
+              - firstName
+              - lastName
+              - password
+              - email
+              - DOB
+              - phoneNumber
+              - role
+            properties:
+              username:
+                type: "string"
+              firstName:
+                type: "string"
+              lastName:
+                type: "string"
+              password:
+                type: "string"
+              email:
+                type: "string"
+              DOB:
+                type: "string"
+                format: "date"
+              phoneNumber:
+                type: "integer"
+              role:
+                type: "string"
+                enum: ['admin', 'teller']
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            type: "object"
+            properties:
+              id:
+                type: "integer"
+                format: "int64"
+              username:
+                type: "string"
+              firstName:
+                type: "string"
+              lastName:
+                type: "string"
+              email:
+                type: "string"
+              DOB:
+                type: "string"
+                format: "date"
+              phoneNumber:
+                type: "integer"
+              role:
+                type: "string"
+        500:
+          description: "Error occurred"
+  /login-employee:
+    post:
+      summary: "Employee Login"
+      tags: [Employees]
+      description: "Logs in an employee and returns a session token."
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Employee's login credentials"
+          required: true
+          schema:
+            type: "object"
+            required:
+              - username
+              - password
+            properties:
+              username:
+                type: "string"
+              password:
+                type: "string"
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            type: "object"
+            properties:
+              employee:
+                type: "object"
+                properties:
+                  id:
+                    type: "integer"
+                    format: "int64"
+                  name:
+                    type: "string"
+                  role:
+                    type: "string"
+              token:
+                type: "string"
+        400:
+          description: "Already logged in"
+        500:
+          description: "Error occurred"

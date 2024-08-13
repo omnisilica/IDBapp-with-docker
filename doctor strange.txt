@@ -1,0 +1,10 @@
+email:		Stephen.Strange@avengers.com
+username:	DrStrange
+password:	Excelsior!1
+sec question:	What is your favorite movie?
+sec answer:	Doctor Strange in the Multiverse of Madness
+first name:	Stephen
+last name:	Strange
+date of birth:	1963-07-01
+phone:		3707872643
+address:	521-525 W 155th St, New York, NY 10032, USA

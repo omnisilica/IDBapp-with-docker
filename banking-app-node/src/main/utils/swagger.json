@@ -1,0 +1,531 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "IDB Bank API",
+      "description": "API documentation for the IDB Bank App",
+      "version": "1.0.0"
+    },
+    "basePath": "/",
+    "paths": {
+      "/customers": {
+        "post": {
+          "summary": "Create a new customer",
+          "description": "Endpoint to create a new customer",
+          "parameters": [
+            {
+              "name": "customer",
+              "in": "body",
+              "description": "Customer object",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string",
+                    "description": "The password for the customer (should be hashed)"
+                  },
+                  "securityQuestion": {
+                    "type": "string"
+                  },
+                  "securityAnswer": {
+                    "type": "string"
+                  },
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "dateOfBirth": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "object",
+                    "properties": {
+                      "address_one": {
+                        "type": "string"
+                      },
+                      "address_two": {
+                        "type": "string"
+                      },
+                      "city": {
+                        "type": "string"
+                      },
+                      "province": {
+                        "type": "string"
+                      },
+                      "postal_code": {
+                        "type": "string",
+                        "enum": ["AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE", "QC", "SK", "YT"],
+                        "description": "The province of the customer. Should be one of the major provinces in Canada.",
+                        "example": "AB"
+                      }
+                    }
+                  },
+                  "income_type": {
+                    "type": "string"
+                  },
+                  "income_amount": {
+                    "type": "number"
+                  },
+                  "__v": {
+                    "type": "number",
+                    "example": 0,
+                    "description": "Version number of the document. This field is managed by MongoDB/Mongoose."
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Customer created successfully"
+            },
+            "400": {
+              "description": "Invalid request"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        },
+        "get": {
+            "summary": "Get All Customers",
+            "description": "Endpoint to retrieve all customers",
+            "responses": {
+              "200": {
+                "description": "All customers found",
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "_id": {
+                        "type": "string"
+                      },
+                      "username": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string"
+                      },
+                      "securityQuestion": {
+                        "type": "string"
+                      },
+                      "securityAnswer": {
+                        "type": "string"
+                      },
+                      "firstName": {
+                        "type": "string"
+                      },
+                      "lastName": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "dateOfBirth": {
+                        "type": "string"
+                      },
+                      "phoneNumber": {
+                        "type": "string"
+                      },
+                      "address": {
+                        "type": "object",
+                        "properties": {
+                          "address_one": {
+                            "type": "string"
+                          },
+                          "address_two": {
+                            "type": "string"
+                          },
+                          "city": {
+                            "type": "string"
+                          },
+                          "province": {
+                            "type": "string"
+                          },
+                          "postal_code": {
+                            "type": "string"
+                          },
+                          "_id": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "income_type": {
+                        "type": "string"
+                      },
+                      "income_amount": {
+                        "type": "number"
+                      },
+                      "__v": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              },
+              "404": {
+                "description": "All customers not found"
+              },
+              "500": {
+                "description": "Internal server error"
+              }
+            }
+          }
+      },
+      "/customers/{id}": {
+        "get": {
+          "summary": "Get customer by ID",
+          "description": "Endpoint to retrieve a customer by ID",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Customer ID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Customer found",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Customer not found"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        },
+        "delete": {
+            "summary": "Delete customer by ID",
+            "description": "Endpoint to delete a customer by ID",
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "Customer ID",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "Customer deleted successfully"
+                },
+                "404": {
+                    "description": "Customer not found"
+                },
+                "500": {
+                    "description": "Internal server error"
+                }
+            }
+        }
+      },
+      "/beneficiaries/customer/{customerId}": {
+        "get": {
+            "summary": "Get all customer's beneficiaries.",
+            "description": "End point to retrieve all users beneficiaries",
+            "parameters":[
+            {
+              "name": "customerId",
+              "in": "path",
+              "description": "ID of the customer",
+              "required": true,
+              "type": "string"
+            }
+            ],
+            "responses": {
+                "200": {
+                  "description": "All customer's beneficiaries found"
+                },
+                "404": {
+                  "description": "All customer's beneficiaries not found"
+                },
+                "500": {
+                  "description": "Internal server error"
+                }
+              }
+        },
+        "post": {
+          "summary": "Create new beneficiary for customer",
+          "description": "Endpoint to create a new beneficiary for a specific customer.",
+          "parameters": [
+            {
+              "name": "customerId",
+              "in": "path",
+              "description": "Customer ID",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "ObjectId"
+              }
+            },
+            {
+              "name": "beneficiary",
+              "in": "body",
+              "description": "Beneficiary object",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "relationship": {
+                    "type": "string"
+                  },
+                  "bank": {
+                    "type": "string"
+                  },
+                  "accountNumber": {
+                    "type": "string"
+                  },
+                  "routingNumber": {
+                    "type": "string"
+                  },
+                  "nickname": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Beneficiary created successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "example": "Beneficiary created successfully"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "example": "Invalid request"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal server error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "example": "Internal server error"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "components": {
+            "schemas": {
+              "Beneficiary": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "relationship": {
+                    "type": "string"
+                  },
+                  "bank": {
+                    "type": "string"
+                  },
+                  "accountNumber": {
+                    "type": "string"
+                  },
+                  "routingNumber": {
+                    "type": "string"
+                  },
+                  "nickname": {
+                    "type": "string"
+                  }
+                },
+                "required": ["name", "relationship", "bank", "accountNumber", "routingNumber", "nickname"]
+              }
+            }
+          }
+        }
+    },
+    "/beneficiaries/customer/{customerId}/{beneficiaryId}" : {
+      "get": {
+        "summary": "Get single beneficiary",
+        "description": "End point to retrieve single beneficiary of customer",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "path",
+            "description": "customerId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "beneficiaryId",
+            "in": "path",
+            "description": "beneficiaryId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+              "description": "Single beneficiary successfully retrieved"
+          },
+          "404": {
+              "description": "Beneficiary/Customer not found"
+          },
+          "500": {
+              "description": "Internal server error"
+          }
+        }
+      },
+      "delete" : {
+        "summary": "Delete a beneficiary",
+        "description": "Endpoint to delete a beneficiary",
+        "parameters": [
+          {
+              "name": "customerId",
+              "in": "path",
+              "description": "Customer ID",
+              "required": true,
+              "type": "string"
+          },
+          {
+            "name": "beneficiaryId",
+            "in": "path",
+            "description": "Beneficiary ID",
+            "required": true,
+            "type": "string"
+        }
+      ],
+      "responses": {
+        "200": {
+            "description": "Beneficiary deleted successfully"
+        },
+        "404": {
+            "description": "Beneficiary not found"
+        },
+        "500": {
+            "description": "Internal server error"
+        }
+      }
+    },
+    "put": {
+      "summary": "Update beneficiary details",
+      "description": "Endpoint to update beneficiary details",
+      "parameters": [
+        {
+          "name": "customerId",
+          "in": "path",
+          "description": "Customer ID",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "beneficiaryId",
+          "in": "path",
+          "description": "Beneficiary ID",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "Beneficiary",
+          "in": "body",
+          "description": "Beneficiary object to be updated",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "relationship": {
+                "type": "string"
+              },
+              "bank": {
+                "type": "string"
+              },
+              "accountNumber": {
+                "type": "string"
+              },
+              "routingNumber": {
+                "type": "string"
+              },
+              "nickname": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Beneficiary updated successfully"
+        },
+        "400": {
+          "description": "Invalid request"
+        },
+        "404": {
+          "description": "Beneficiary not found"
+        },
+        "500": {
+          "description": "Internal server error"
+        }
+      }
+    }
+  }
+}
+}

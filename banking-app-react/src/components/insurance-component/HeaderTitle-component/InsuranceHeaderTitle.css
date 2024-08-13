@@ -1,0 +1,16 @@
+.propertyHeaderSection {
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-around;
+  padding: 2.5rem;
+}
+
+.propertyHeaderText {
+  color: #333;
+  font-family: inherit;
+  font-size: 3.5rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 3.375rem;
+  margin: 0;
+}

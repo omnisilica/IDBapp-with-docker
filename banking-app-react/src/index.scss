@@ -1,0 +1,146 @@
+@import url(./styles/Generics.css);
+@import url(./styles/Palette.css);
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+.body-logged-in {
+    margin-top: 145px;
+}
+
+.body-logged-out {
+    margin-top: 100px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  align-items: center;
+}
+
+btn-bank { background-color: coral; }
+
+.round { border-radius: 24px; }
+
+.registration-nav {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--avengers-white);
+    cursor: pointer;
+    flex-grow: 1;
+    transition: background-color 0.3s, border-bottom-color 0.3s;
+    border-bottom: 2px solid transparent;
+
+    span {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: var(--avengers-white);
+      border-radius: 10px;
+    }
+
+    &.active {
+      border-bottom-color: var(--avengers-orange);
+      color: var(--avengers-white);
+      border-color: var(--avengers-orange);
+
+      span {
+        background-color: var(--avengers-gray);
+        color: var(--avengers-white);
+      }
+    }
+  }
+}
+
+.form-size{
+  width: 98%;
+  margin: auto;
+}
+
+.step-content-container { margin-top: 30px; }
+
+.step-content {
+  margin-top: 10px;
+  padding: 20px;
+  border-left: 1px solid var(--avengers-white);
+  border-right: 1px solid var(--avengers-white);
+  border-bottom: 1px solid var(--avengers-white);
+  border-radius: 10px;
+  box-shadow: 0px 1px 2px var(--avengers-gray);
+  background-color: var(--avengers-white);
+  margin-bottom: 20px;
+}
+
+.form-area,
+.textbox-container h1,
+.textbox-container h2,
+.textbox-container h3,
+.textbox-container h4,
+.textbox-container h5,
+.textbox-container h6 {
+  margin-bottom: 30px;
+}
+
+.tip-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tip {
+  font-size: 14px;
+  color: var(--avengers-gray);
+  margin-top: 2px;
+}
+
+.rounded-button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.next{
+  background-color: var(--avengers-orange);
+  color: var(--avengers-white);
+}
+
+.form-control.mismatch { border-color: var(--avengers-red); }
+
+.warning {
+  color: var(--avengers-red);
+  font-weight: bold;
+}
+
+.button-spacing { margin: 10px; }
+
+.body-min-size { min-height: 78vh; }
+
+.navbar-brand { color:var(--avengers-red); }
+
+.navbar-brand, .nav-link, .btn {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.visibleIcon {
+    font-size: 17px;
+    padding: 6px;
+}
+
+.passwordRow {
+    display: flex;
+}

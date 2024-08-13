@@ -1,0 +1,72 @@
+.main-heading{
+    background-color: #f48700;
+    padding: 9px;
+    color: white;
+    border-radius: 12px;
+
+}
+.features-heading{
+
+    background-color: white;
+    border: 2px solid #f48700;
+    padding:20px;
+    border-radius: 15px;
+    font:bold;
+    margin-right: 120px;
+}
+
+.card-account{
+    border-bottom:#d3d3d3 1px solid;
+    border-right: #d3d3d3 1px solid;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.card-account-business{
+    border-bottom:#d3d3d3 1px solid;
+    border-right: #d3d3d3 1px solid;
+    border-radius: 50px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.icon2{
+    background-color: #f48700;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.single-feature{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.point-list ul{
+    list-style:disc;
+}
+.point-list{
+    display:flex;
+    flex-direction: column;
+}
+button{
+background-color: #f48700;
+color: #0a0a0a;
+border: none;
+padding: 5px 15px;
+align-items: center;
+border-radius: 10px;
+}
+
+
+h6{
+    text-align: start;
+    align-self: flex-start;
+}
+.img3{
+    object-fit: cover;
+}

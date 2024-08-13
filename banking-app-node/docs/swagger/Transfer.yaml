@@ -1,0 +1,261 @@
+paths:
+  /transactions/notify-death/{accountNumber}:
+    put:
+      tags: [Transactions]
+      summary: Update account status to deceased
+      parameters:
+        - in: path
+          name: accountNumber
+          required: true
+          schema:
+            type: string
+            example: "0000000000000016"
+      responses:
+        200:
+          description: Account status updated successfully
+        400:
+          description: Error updating account status
+  /transactions/transfer-to-beneficiary:
+    post:
+      tags: [Transactions]
+      summary: "Transfer funds to a beneficiary"
+      description: "Transfers funds from a deceased account to a beneficiary's account."
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountNumber:
+                  type: string
+                  description: "The account number of the deceased account"
+                  example: "0000000000000001"
+                beneficiaryId:
+                  type: string
+                  description: "The ID of the beneficiary"
+                  example: "1234567890123456"
+                amount:
+                  type: number
+                  description: "The amount to transfer"
+                  example: 100.00
+                date:
+                  type: string
+                  format: date
+                  example: "2023-01-01"
+      responses:
+        "200":
+          description: "Transfer successful"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Transfer completed successfully"
+                  transaction:
+                    type: object
+                    properties:
+                      transactionId:
+                        type: string
+                        example: "txn_12345"
+                      sending_account_num:
+                        type: string
+                        example: "123456789"
+                      receiving_account_num:
+                        type: string
+                        example: "987654321"
+                      amount:
+                        type: number
+                        example: 100.00
+                      date:
+                        type: string
+                        format: date
+                        example: "2023-01-01"
+        "400":
+          description: "Invalid input"
+        "401":
+          description: "Unauthorized"
+        "500":
+          description: "Server error"
+  /transactions/transfer:
+    post:
+      tags: [Transactions]
+      summary: "Initiate a transfer between accounts"
+      description: "Initiates a transfer between accounts."
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Transfer between own accounts"
+                sending_account_num:
+                  type: string
+                  example: "123456789"
+                receiving_account_num:
+                  type: string
+                  example: "987654321"
+                amount:
+                  type: number
+                  example: 100.00
+                date:
+                  type: string
+                  format: date
+                  example: "2023-01-01"
+      responses:
+        "200":
+          description: "Transfer successful"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transactionId:
+                    type: string
+                    example: "txn_12345"
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "Transfer completed successfully"
+        "400":
+          description: "Invalid input"
+        "401":
+          description: "Unauthorized"
+        "500":
+          description: "Server error"
+  /transactions/account/{accountNumber}:
+    get:
+      tags: [Transactions]
+      summary: "Get transactions for an account"
+      description: "Retrieves the list of transactions for a specific account."
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: accountNumber
+          required: true
+          schema:
+            type: string
+          example: "123456789"
+      responses:
+        "200":
+          description: "List of transactions"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    transactionId:
+                      type: string
+                      example: "txn_12345"
+                    date:
+                      type: string
+                      format: date
+                      example: "2023-01-01"
+                    amount:
+                      type: number
+                      example: 100.00
+                    type:
+                      type: string
+                      example: "credit"
+                    description:
+                      type: string
+                      example: "Transfer between own accounts"
+        "401":
+          description: "Unauthorized"
+        "500":
+          description: "Server error"
+  /beneficiaries/customer/{customerId}:
+    get:
+      summary: "Get beneficiaries for a customer"
+      description: "Retrieves the list of beneficiaries for a specific customer."
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: customerId
+          required: true
+          schema:
+            type: string
+          example: "cust_12345"
+      responses:
+        "200":
+          description: "List of beneficiaries"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                      example: 1
+                    name:
+                      type: string
+                      example: "John Doe"
+                    bank:
+                      type: string
+                      example: "Bank of Example"
+                    relationship:
+                      type: string
+                      example: "Friend"
+                    accountNumber:
+                      type: number
+                      example: 123456789
+                    routingNumber:
+                      type: number
+                      example: 987654321
+                    nickName:
+                      type: string
+                      example: "Savings Account"
+        "401":
+          description: "Unauthorized"
+        "500":
+          description: "Server error"
+
+  /accounts/{accountNumber}/balance:
+    get:
+      tags: [Transactions]
+      summary: "Get account balance"
+      description: "Retrieves the balance of a specific account."
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: accountNumber
+          required: true
+          schema:
+            type: string
+          example: "123456789"
+      responses:
+        "200":
+          description: "Account balance"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountNumber:
+                    type: string
+                    example: "123456789"
+                  balance:
+                    type: number
+                    example: 1000.00
+        "401":
+          description: "Unauthorized"
+        "500":
+          description: "Server error"

@@ -1,0 +1,14 @@
+.checkbox-div{
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-check{
+    width: 50%;
+}
+
+.form-check-label{
+    font-weight: 500;
+}

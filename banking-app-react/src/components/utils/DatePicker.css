@@ -1,0 +1,12 @@
+.date-picker {
+    justify-content: space-between;
+    width: 400px;
+}
+
+.date-picker >div{
+    width: 120px;
+}
+
+.date-picker{
+    margin-top:-25px;
+}

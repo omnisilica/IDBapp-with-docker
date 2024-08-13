@@ -1,0 +1,24 @@
+.table.income-table{
+    font-size: 12px;
+    margin-top: 30px;
+    padding: 0;
+    width:550px;
+}
+
+.income-table td{
+    padding:6px 3px;
+    font-weight: 400;
+}
+
+.income-table td div{
+    width:200px;
+}
+
+.income-table td input{
+    width:150px;
+}
+
+.income-table td select{
+    width:150px;
+}
+

@@ -1,0 +1,12 @@
+div.cardholder > .card {
+	width:			18rem;
+	padding:		2%;
+	margin:			2%;
+	border:			none;
+	border-radius:	5%;
+}
+
+div.cardholder > .card > [class^="card-img"] {
+	background:		var(--avengers-orange);
+	border-radius:	50% 10%;
+}

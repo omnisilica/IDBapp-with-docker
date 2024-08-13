@@ -1,0 +1,18 @@
+.carousel[data-bs-theme] {
+	margin-top: -5%;
+}
+
+.carousel-item > img {
+	object-fit: cover;
+	height: 400px;
+	object-position: 50% 80%;
+}
+
+.carousel-item:first-of-type > img {
+	object-position: 50% 30%;
+}
+
+.carousel-item > .carousel-caption {
+    background: rgba(85,85,85,0.2);
+    border-radius: 24px;
+}

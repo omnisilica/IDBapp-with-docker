@@ -1,0 +1,57 @@
+.confirm-info-tabs {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.confirm-info-tab {
+    display: none;
+    margin: 16px;
+    padding: 16px;
+}
+
+.confirm-info-tab.active {
+    display: block;
+}
+
+.confirm-info-subtitle {
+    color: #757575;
+    font-weight: normal;
+}
+
+.confirm-info-container {
+    display: flex;
+}
+
+.confirm-info-container-item {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 10px;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.confirm-info-list {
+    list-style: disc;
+}
+
+.confirm-info-list > li {
+    font-weight: normal;
+}
+
+.confirm-info-checkbox-section {
+    display: flex;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0px;
+    padding: 20px 0px;
+}
+.confirm-info-checkbox-section > div {
+    margin-left: 10px;
+    vertical-align: middle;
+    line-height: 26px; 
+}
+.confirm-info-checkbox-section > input {
+    padding: 8px;
+}

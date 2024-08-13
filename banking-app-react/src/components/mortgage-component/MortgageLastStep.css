@@ -1,0 +1,34 @@
+.account-setup-containerWrapUp {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    max-width: 1024px;
+    margin: 0 auto;
+    align-content: stretch;
+    justify-content: space-around;
+}
+
+.navWrapUp{
+     display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.wrapUp{
+    padding-left: 9rem;
+}
+
+
+
+.wrapUpDiv{
+        padding-left: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: baseline;
+}

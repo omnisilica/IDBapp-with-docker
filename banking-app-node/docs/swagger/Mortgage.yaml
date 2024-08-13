@@ -1,0 +1,245 @@
+paths:
+  /mortgages:
+    post:
+      summary: Create a new mortgage application
+      tags: [Mortgages]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mortgage'
+      responses:
+        200:
+          description: The created mortgage application
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  mortgage:
+                    $ref: '#/components/schemas/Mortgage'
+                  status:
+                    example: 200
+                    type: number
+        500:
+          description: Error message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                  status:
+                    type: number
+                    example: 500
+    get:
+      summary: Get all mortgages
+      tags: [Mortgages]
+      requestBody:
+        required: false
+        content:
+          application/json:
+      responses:
+        200:
+          description: The created mortgage application
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  mortgages:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Mortgage'
+                  status:
+                    example: 200
+                    type: number
+        500:
+          description: Error message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                  status:
+                    type: number
+                    example: 500
+  /mortgages/{id}:
+    get:
+      summary: Retrieve a mortgage application by ID
+      tags: [Mortgages]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The mortgage application ID
+      responses:
+        200:
+          description: The mortgage application data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  mortgage:
+                    $ref: '#/components/schemas/Mortgage'
+                  status:
+                    type: number
+                    example: 200
+        404:
+          description: Mortgage application not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  status:
+                    type: number
+                    example: 404
+        500:
+          description: Error message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                  status:
+                    type: number
+                    example: 500
+    put:
+      summary: Update a mortgage application by ID
+      tags: [Mortgages]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The mortgage application ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mortgage'
+      responses:
+        200:
+          description: The updated mortgage application
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    exmaple: true
+                  mortgage:
+                    $ref: '#/components/schemas/Mortgage'
+                  status:
+                    type: number
+                    example: 200
+        404:
+          description: Mortgage application not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                    example: 'Mortgage application not found'
+                  status:
+                    type: number
+                    example: 404
+        500:
+          description: Error message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  status:
+                    type: number
+                    example: 500
+                  error:
+                    type: string
+                    example: 'Internal server error'
+    delete:
+      summary: Delete a mortgage application by ID
+      tags: [Mortgages]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: The mortgage application ID
+      responses:
+        204:
+          description: The document was deleted successfully
+        404:
+          description: Mortgage application not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                    exmaple: 'Mortgage application not found'
+                  status:
+                    type: number
+                    example: 404
+        500:
+          description: Error message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                    example: 'Internal server error'
+                  status:
+                    type: number
+                    example: 500

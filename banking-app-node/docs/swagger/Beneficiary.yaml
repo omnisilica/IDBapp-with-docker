@@ -1,0 +1,205 @@
+paths:
+  /beneficiaries/customer/{customerId}:
+    get:
+      summary: Get all customer's beneficiaries
+      tags: [Beneficiaries]
+      parameters:
+        - in: path
+          name: customerId
+          required: true
+          schema:
+            type: string
+          description: The customer ID
+      responses:
+        "200":
+          description: A list of beneficiaries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Beneficiary"
+    post:
+      summary: Create a new beneficiary for customer
+      tags: [Beneficiaries]
+      parameters:
+        - in: path
+          name: customerId
+          required: true
+          schema:
+            $ref: "#/components/schemas/Beneficiary"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Beneficiary"
+          description: The customer ID
+      requestBody:
+        description: The beneficiary to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Beneficiary"
+            example:
+              name: "John Doe"
+              relationship: "Friend"
+              bank: "IDB"
+              accountNumber: "1234567890"
+              routingNumber: "123456789"
+              nickname: "John"
+      responses:
+        201:
+          description: The beneficiary created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Beneficiary"
+        400:
+          description: Error message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                  status:
+                    type: number
+                    example: 400
+        500:
+          description: Error message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                  status:
+                    type: number
+                    example: 500
+  /beneficiaries/customer/{customerId}/{beneficiaryId}:
+    get:
+      summary: Get single beneficiary
+      parameters:
+        - in: path
+          name: customerId
+          required: true
+          schema:
+            type: string
+          description: The customer ID
+        - in: path
+          name: beneficiaryId
+          required: true
+          schema:
+            type: string
+          description: The beneficiary ID
+      tags: [Beneficiaries]
+      responses:
+        "200":
+          description: The beneficiary
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Beneficiary"
+    put:
+      summary: Update a beneficiary
+      parameters:
+        - in: path
+          name: customerId
+          required: true
+          schema:
+            type: string
+          description: The customer ID
+        - in: path
+          name: beneficiaryId
+          required: true
+          schema:
+            type: string
+          description: The beneficiary ID
+      tags: [Beneficiaries]
+      requestBody:
+        description: The beneficiary to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Beneficiary"
+            example:
+              name: "John Doe"
+              relationship: "Friend"
+              bank: "IDB"
+              accountNumber: "1234567890"
+              routingNumber: "123456789"
+              nickname: "John"
+      responses:
+        "200":
+          description: The beneficiary updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Beneficiary"
+        "404":
+          description: Beneficiary not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                  status:
+                    type: number
+                    example: 404
+    delete:
+      summary: Delete a beneficiary
+      parameters:
+        - in: path
+          name: customerId
+          required: true
+          schema:
+            type: string
+          description: The customer ID
+        - in: path
+          name: beneficiaryId
+          required: true
+          schema:
+            type: string
+          description: The beneficiary ID
+      tags: [Beneficiaries]
+      responses:
+        "200":
+          description: Beneficiary deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  status:
+                    type: number
+        "404":
+          description: Beneficiary not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  error:
+                    type: string
+                  status:
+                    type: number
+                    example: 404

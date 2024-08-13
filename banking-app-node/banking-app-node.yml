@@ -1,0 +1,23 @@
+
+#docker network create mongo-network
+#docker run -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password --name mongodb --net mongo-network mongo
+version: '3'
+services:
+    mongod:
+        image: mongo
+        container_name: mongod
+        ports:
+            - '27017:27017'
+        expose: 
+            - '27017'
+    banking-app-node:
+        build: .
+        ports:
+            - '3000:3000'
+        environment:
+            DB_CONNECTION: mongodb://mongod:27017
+        depends_on:
+            - mongod
+        stdin_open: true
+        tty: true
+        restart: always

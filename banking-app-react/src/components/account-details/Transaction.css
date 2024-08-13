@@ -1,0 +1,82 @@
+.overlay {
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.3);
+	top: 32px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.overlay > .popup {
+	width: 70%;
+	max-width: 720px;
+	height: 70%;
+	margin: 6em auto auto auto;
+	background: white;
+	border-radius: 4px;
+	padding: 1em;
+	box-shadow: 0px 0px 16px  rgba(0, 0, 0, 0.3);
+}
+
+header.flex-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+header > button {
+	width: 2em;
+	height: 2em;
+	background: none;
+	border: none;
+	color: gray;
+}
+
+header > button:hover {
+	background: lightgray;
+	border-radius: 1em;
+}
+
+.popup > article .xl {
+	font-size: 3em;
+}
+
+.transaction-info .avengers-orange {
+	color: var(--avengers-orange);
+}
+
+.transaction-info table {
+	border-collapse: collapse;	
+	width: 100%;
+}
+
+.transaction-info thead {
+	display: content;
+	border: 2px solid lightgray;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.transaction-info thead > tr {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	font-size: 0.8em;
+	line-height: 0.9em;
+	padding: 0.5em;
+}
+
+.transaction-info tbody {
+	border: 2px solid lightgray;
+}
+
+.transaction-info tbody > tr > * {
+	padding: 0.5em;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.transaction-info tbody > tr > th {
+	width: 30%;
+}

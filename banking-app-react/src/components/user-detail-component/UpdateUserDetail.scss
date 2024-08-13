@@ -1,0 +1,7 @@
+@use "../../styles/Palette.css";
+
+label {
+	> b, ~ p {
+		color: var(--warning);
+	}
+}

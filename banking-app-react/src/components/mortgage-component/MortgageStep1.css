@@ -1,0 +1,11 @@
+.box-container {
+  margin: 0 auto;
+}
+
+.def {
+  width: "100%";
+  height: 50;
+  position: "absolute";
+  bottom: 0;
+  display: flex;
+}

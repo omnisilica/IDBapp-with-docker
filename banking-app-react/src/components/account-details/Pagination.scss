@@ -1,0 +1,32 @@
+.pagination-ul {
+  display: flex;
+
+  .pagination-li {
+    font-size: 20px;
+    padding: 0 12px;
+    margin: auto 4px;
+    align-items: center;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: lightgray;
+      cursor: pointer;
+    }
+
+    &.disabled {
+      pointer-events: none;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    &.selected {
+      background-color: lightgray;
+    }
+
+    &.dots:hover {
+      background-color: transparent;
+    }
+  }
+}

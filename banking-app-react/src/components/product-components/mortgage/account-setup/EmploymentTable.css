@@ -1,0 +1,11 @@
+.employment-table {
+    font-size: 12px;
+    margin-top: 30px;
+    padding: 0;
+    max-width: 850px;
+}
+
+.employment-table td {
+    padding: 6px 3px;
+    font-weight: 400;
+}

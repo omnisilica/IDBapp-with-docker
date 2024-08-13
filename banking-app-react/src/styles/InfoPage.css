@@ -1,0 +1,9 @@
+.accountDiv *,
+.accountDiv p a,
+.accountDiv h2	{
+	color: var(--avengers-gray);
+}
+
+div.accountDiv > h1.row {
+	margin: 2%;
+}

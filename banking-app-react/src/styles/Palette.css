@@ -1,0 +1,9 @@
+:root {
+  --avengers-orange: #F28500;
+  --avengers-white: #f5f5f5;
+  --avengers-gray: #555555;
+  --avengers-darkgray: #333;
+  --avengers-red: #dc3545;
+
+  --warning: var(--avengers-red);
+}

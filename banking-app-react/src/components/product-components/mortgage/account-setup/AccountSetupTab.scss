@@ -1,0 +1,85 @@
+.arrow-icon {
+	width: 0.8em !important;
+	height: 0.8em !important;
+	margin-top: 4px;
+}
+
+.account-setup-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 1024px;
+	margin: 0 auto;
+
+	.options{
+		border: 1px solid #EEEEEE;
+		width: 400px;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #EEEEEE;
+		}
+	}
+
+	.tabs {
+		display: flex;
+		flex-direction: column;
+		font-size: 14px;
+
+		.tab {
+			display: none;
+			margin: 16px;
+			padding: 16px;
+
+			&.active {
+				display: block;
+			}
+
+			.tab-heading {
+				font-weight: 600;
+				font-size: 18px;
+				margin-top:30px;
+			}
+
+			.field-heading {
+				font-weight: 600;
+				margin-top: 30px;
+				font-size: 14px;
+			}
+
+			.info-text{
+				font-weight: 400;
+			}
+		}
+	}
+
+	.flex2 {
+		display: flex;
+		width: 400px;
+		justify-content: space-between;
+
+		> div {
+			width: calc(50% - 10px)
+		}
+	}
+
+	.footer {
+		border-top: 3px solid var(--avengers-lightgray);
+		padding: 0.5em;
+
+		button {
+			padding: 0.2em 1.2em;
+			font-weight: bold;
+
+			&.btn-outline-light-2 {
+				color: gray;
+				background: none;
+				border-color: lightgray;
+
+				&:hover {
+					border-color: var(--avengers-orange);
+				}
+			}
+		}
+	}
+}

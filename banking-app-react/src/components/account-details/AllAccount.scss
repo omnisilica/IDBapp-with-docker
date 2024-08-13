@@ -1,0 +1,106 @@
+.type-Heading {
+    text-align: left;
+}
+
+.account-type {
+    text-align: left;
+    cursor: pointer;
+}
+
+.balance {
+    text-align: right;
+    font-weight: bold;
+}
+
+.table {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+    background-color: #F5F5F5;
+}
+
+.navbar-list {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    line-height: 2rem;
+    color: #333333;
+
+    &:hover {
+        @extend .navbar-list;
+    }
+}
+
+.navbar-button-class {
+    border-top: 0;
+    width: 100%;
+    border-left: 0;
+    border-right: 0;
+    background-color: transparent;
+    border-bottom-width: 2px;
+    border-bottom-color: #333333;
+    width: 12.5rem;
+
+    &:hover {
+        background-color: #F5CB5C;    
+        border-bottom-width: 4px;
+        border-bottom-color: #F28500;
+        position: relative;
+        border-radius: .5rem;
+        margin-bottom: -.5rem;
+    }
+}
+
+.accountDiv {
+    width: 100%;
+    justify-content: center;
+}
+
+.active-navbar-button-class {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: transparent;
+    position: relative;
+    margin-bottom: -.5rem;
+    border-bottom-width: 4px;
+    border-bottom-color: #F28500;
+    color: #333333;
+    min-width: 12.5rem;
+
+    &:hover {
+        background-color: #F5CB5C;
+        position: relative;
+        border-radius: .5rem;
+    }
+}
+
+.account-detail {
+    width: 100vw;
+    
+    align-content: center;
+    text-align: center;
+}
+
+.account-details-pad {
+    padding-right: 10%;
+    padding-left: 10%;
+    min-height: 56.5vh;
+}
+
+.login-container { height: 50vh; }
+
+.container > .accountDiv {
+	padding-bottom: 6em;
+
+    > .accountDiv {
+        margin-bottom: 4em;
+    }
+}
+
+.navBar { color: #F28500; }

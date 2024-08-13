@@ -1,0 +1,38 @@
+/* Style for screens 768 pixels and above */
+@media (min-width: 769px) {
+  .row > .row-auto {
+    max-width: 65%;
+  }
+}
+/* Style for screens below 768 pixels */
+@media (max-width: 768px) {
+  .row > .row-auto {
+    max-width: 100%; /*You can set it to 100% or any other value you prefer for smaller screens*/
+  }
+}
+
+/* Style for screens 768 pixels and above */
+@media (min-width: 769px) {
+  .set-form-width {
+    max-width: 60%;
+  }
+}
+/* Style for screens below 768 pixels */
+@media (max-width: 768px) {
+  .set-form-width {
+    max-width: 100%; /*You can set it to 100% or any other value you prefer for smaller screens*/
+  }
+}
+
+.heading {
+  text-align: center;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}

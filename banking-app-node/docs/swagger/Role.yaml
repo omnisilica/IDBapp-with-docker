@@ -1,0 +1,114 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: Role API
+  description: API for managing roles
+paths:
+  /add-role:
+    post:
+      tags:
+        - Roles
+      summary: Add a new role
+      description: Adds a new role to the system
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: role
+          description: Role to add
+          required: true
+          schema:
+            type: object
+            required:
+              - name
+              - role_id
+              - created_at
+            properties:
+              name:
+                type: string
+              role_id:
+                type: number
+              created_at:
+                type: string
+                format: date-time
+      responses:
+        200:
+          description: Role added successfully
+          schema:
+            $ref: '#/definitions/Role'
+        500:
+          description: Error message
+          schema:
+            $ref: '#/definitions/Error'
+  /delete-role:
+    delete:
+      tags:
+        - Roles
+      summary: Delete a role
+      description: Deletes a role from the system
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: role_id
+          description: ID of the role to delete
+          required: true
+          schema:
+            type: object
+            properties:
+              role_id:
+                type: number
+      responses:
+        200:
+          description: Role deleted successfully
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        500:
+          description: Error message
+          schema:
+            $ref: '#/definitions/Error'
+  /:
+    get:
+      tags:
+        - Roles
+      summary: Test endpoint
+      description: Test endpoint to check if the service is up
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Service is up
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+definitions:
+  Role:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      role_id:
+        type: number
+      created_at:
+        type: string
+        format: date-time
+      permissions:
+        type: array
+        items:
+          type: string
+  Error:
+    type: object
+    properties:
+      message:
+        type: string

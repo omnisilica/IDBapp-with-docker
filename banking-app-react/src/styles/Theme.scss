@@ -1,0 +1,267 @@
+@use "../../node_modules/bootstrap/dist/css/bootstrap.css";
+@use "./Palette.css";
+
+#root {
+  width: 100%;
+}
+
+* {
+  text-decoration: none !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+li.nav-item {
+  line-height: 2rem !important;
+  font-size: large !important;
+}
+
+.btn {
+  border-radius: 22px;
+  padding: 5px 10px;
+  margin: 5px !important;
+  border: 2px solid;
+  font-size: large !important;
+  font-weight: normal;
+}
+
+.btn-outline-primary,
+input[type="file"]::file-selector-button {
+  @extend .btn;
+  background-color: var(--avengers-orange) !important;
+  border: 2px solid var(--avengers-orange) !important;
+  border-radius: 22px;
+  color: var(--avengers-white) !important;
+
+  &:hover {
+    background-color: var(--avengers-white) !important;
+    color: var(--avengers-orange) !important;
+  }
+}
+
+.btn-outline-primary:active,
+.btn-outline-primary:focus {
+  box-shadow: 0 0 1px 1px var(--avengers-orange) !important;
+}
+
+.btn-outline-secondary {
+  @extend .btn;
+  background-color: var(--avengers-white) !important;
+  border: 2px solid var(--avengers-orange) !important;
+  color: var(--avengers-orange) !important;
+
+  &:hover {
+    background-color: var(--avengers-orange) !important;  
+    color: var(--avengers-white) !important;
+  }
+
+  &:active, &:focus {
+    box-shadow: 0 0 1px 1px var(--avengers-orange) !important;
+  }
+}
+
+.btn-outline-light {
+  @extend .btn;
+  background-color: var(--avengers-orange) !important;
+  color: var(--avengers-white) !important;
+  border: 2px solid var(--avengers-white) !important;
+
+  &:active, &:focus {
+    box-shadow: 0 0 1px 1px var(--avengers-orange) !important;
+    color: var(--avengers-orange);
+  }
+}
+
+.btn-outline-light:hover,
+input[type="file"]::file-selector-button:hover {
+  @extend .btn;
+  background-color: var(--avengers-white) !important;
+  color: var(--avengers-orange) !important;
+  border: 2px solid var(--avengers-orange) !important;
+}
+
+.btn-outline-light-2 {
+  @extend .btn;
+  background-color: var(--avengers-white);
+  color: var(--avengers-darkgray);
+  border: 2px solid var(--avengers-white);
+
+  &:hover, &:active, &:focus {
+    color: var(--avengers-orange) !important;
+  }
+
+  &:hover {
+    border-color: var(--avengers-orange);
+  }
+
+  &:active, &:focus {
+    box-shadow: 0 0 1px 1px var(--avengers-orange) !important;
+  }
+}
+
+.btn-outline-success,
+.btn-outline-danger,
+.btn-outline-warning,
+.btn-outline-info,
+.btn-outline-dark {
+  @extend .btn;
+}
+
+textarea,
+select,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  @extend .form-control;
+
+  &:focus {
+    box-shadow: 0 0 1px 1px var(--avengers-orange) !important;
+    border: 0.5px solid var(--avengers-orange) !important;
+  }
+}
+
+input[type="radio"] {
+  @extend .form-check-input;
+  appearance: none;
+  width: 17px;
+  height: 17px;
+  padding: 5px;
+  background-color: var(--avengers-white);
+  border-radius: 50%;
+  border: 1px solid var(--avengers-darkgray);
+  vertical-align: middle;
+
+  &:checked, &:focus {
+    box-sizing: border-box;
+    position: relative;
+    background-color: var(--avengers-orange);
+    border: 1px solid var(--avengers-orange);
+    box-shadow: 0 0 1px 5px var(--avengers-white) !important;
+    transition: 2s transform ease-in-out;
+    transform: rotate(1080deg);
+    outline: 1px dashed var(--avengers-orange);
+  }
+}
+
+input[type="checkbox"] {
+  @extend .form-check-input;
+  border: 1px solid var(--avengers-darkgray);
+
+  &:focus, &:checked {
+    width: 17px;
+    height: 17px;    
+    box-sizing: border-box;
+    position: relative;
+    vertical-align: middle;
+    transition: 0.5s transform ease-in-out;
+  }
+
+  &:focus {
+    background-color: var(--avengers-white);
+    box-shadow: 0 0 1px 5px var(--avengers-white) !important;
+  }
+
+  &:checked {
+    background-color: var(--avengers-orange);
+    border: 1px solid var(--avengers-orange);
+    transform: rotate(1080deg);
+    outline: 0px dashed var(--avengers-orange);
+  }
+}
+
+option {
+  @extend .form-control;
+  box-shadow: 0 0 1px 1px var(--avengers-orange) !important;
+  font-size: large !important;
+  height: 5rem;
+}
+
+.box-container {
+  @extend .container;
+  @extend .p-5;
+  @extend .pt-4;
+  @extend .mt-4;
+  @extend .border;
+  @extend .shadow;
+  @extend .pb-4;
+  @extend .mb-4;
+  background-color: var(--avengers-white);
+}
+
+.custom-div-alert {
+  left: 0;
+  margin: auto; // Centers alert component
+  position: fixed; // So that it will display fixed to the entire page
+  right: 0;
+  top: 8em;
+  width: 40%;
+}
+
+.alert-primary,
+.alert-secondary,
+.alert-success,
+.alert-danger,
+.alert-warning,
+.alert-info,
+.alert-light,
+.alert-dark {
+  @extend .alert-dismissible;
+  @extend .justify-content-center;
+  @extend .fade;
+  @extend .show;
+  @extend .d-flex;
+  @extend .text-center;
+}
+
+.custom-div-alert-message {
+  text-align: center;
+  width: 100%;
+}
+
+.nav-sub {
+  line-height: 1;
+  color: var(--avengers-white);
+  clear: both;
+  background-color: var(--avengers-darkgray);
+  position: relative;
+  border-bottom: 1px solid var(--avengers-darkgray);
+
+  .container {
+    height: 4.95rem;
+    max-width: 90rem;
+    position: relative;
+    padding: 0.6rem 0 0 1.3rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .nav-sub .container {
+    height: 2.75rem;
+  }
+}
+
+.nav-sub-item {
+  display: inline-block;
+}
+
+.nav-sub-link ~ .nav-sub-underline {
+  background-color: var(--avengers-darkgray);
+  height: 3px;
+  display: block;
+  padding-bottom: 0;
+}
+
+.nav-sub-link:hover ~ .nav-sub-underline {
+  background-color: var(--avengers-orange);
+}

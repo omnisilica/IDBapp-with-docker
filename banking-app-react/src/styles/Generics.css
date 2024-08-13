@@ -1,0 +1,15 @@
+.center {
+	justify-content: center;
+	text-align: center;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.banner-image {
+	height: 300px;
+	object-fit: cover;
+	object-position: 50% 15%;
+    margin-top: -5%;
+}

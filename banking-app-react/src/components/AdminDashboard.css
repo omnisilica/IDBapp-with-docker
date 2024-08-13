@@ -1,0 +1,64 @@
+.adminDashboardNav {
+  display: flex;
+  align-items: center;
+}
+
+.adminDashboardEmployeeTable {
+  min-width: 100%;
+}
+
+.externalLinkContainer a {
+  display: block;
+}
+
+#adminDashboardButtonEnter,
+#adminDashboardButtonCancel {
+  border-radius: 10px;
+  width: 50%;
+  margin: 0 !important;
+}
+.adminContainer {
+  display: flex; /* Enables Flexbox */
+  justify-content: space-between; /* Spaces out the child elements */
+}
+
+.employeeTable {
+  flex: 2; /* Each child will take up equal amount of space */
+}
+
+.radioBox {
+  flex: 1;
+  margin: 1rem;
+}
+
+.radioContainer p {
+  font-size: 0.9rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between; /* Adjusts the space between buttons */
+}
+
+.button-group button {
+  margin: 0 5px; /* Adds space between buttons */
+  background-color: #f0f0f0; /* Light grey background */
+  border: 1px solid #ccc; /* Grey border */
+  padding: 5px 10px; /* Padding inside the buttons */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+.button-group button:first-child {
+  background-color: #007bff;
+  color: white; /* White text color */
+  padding: 5px;
+}
+
+.button-group button:last-child {
+  background-color: #007bff;
+  color: white; /* White text color */
+}
+
+.bold-text {
+  font-weight: bold;
+}

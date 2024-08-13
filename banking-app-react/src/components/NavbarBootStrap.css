@@ -1,0 +1,48 @@
+.nav-link.nav-sub-link {
+  color: white; /* Reset the link text color */
+  text-decoration: none; /* Remove the default underline */
+  position: relative; /* Make the link a positioning context for the pseudo-element */
+}
+
+.nav-link.nav-sub-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 2px solid transparent; /* Add a transparent underline */
+  transition: border-color 0.3s; /* Add a smooth transition effect for the border color */
+}
+
+.nav-link.nav-sub-link:hover::after {
+  border-color: rgb(242, 133, 0); /* Change the border color to orange on hovering */
+}
+
+.nav-sub > ul.navbar-nav > li.nav-sub-item {
+  flex: 8;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-sub > ul.navbar-nav > li.nav-sub-item:first-child {
+  flex: 2;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1rem;
+}
+
+.nav-sub > ul.navbar-nav > li.nav-sub-item:last-child {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 0.85rem;
+  padding-top: 0.45rem;
+}
+
+.nav-sub > ul.navbar-nav > li.nav-sub-item:last-child > .nav-sub-item {
+  padding-right: 0.2rem;
+}
+
+div.fixed-top > nav:first-child {
+  background-color: #F28500;
+}

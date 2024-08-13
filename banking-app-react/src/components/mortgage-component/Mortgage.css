@@ -1,0 +1,176 @@
+.avgContent {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  text-align: center;
+}
+
+.avgBanner-controls {
+  width: 100%;
+  background-color: #fff;
+  color: rgb(26, 25, 25);
+  height: auto;
+  padding: 40px 0;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 2px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+@media only screen and (min-width: 1023px) {
+  .avgWrapper {
+    padding: 1rem 1rem;
+  }
+}
+
+.avgFlex-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.avgCol-2 {
+  margin-left: 3rem !important;
+  margin-right: 3rem !important;
+}
+.avgCol-3 {
+  margin-left: 3rem !important;
+  margin-right: 3rem !important;
+}
+
+.avgBanner-controls .avgContent .avgBodyMed-prx {
+  margin-bottom: 6px;
+  display: block;
+}
+
+.avgBodyMed-prx {
+  font-size: 1rem;
+  font-family: "TangerineCircular", Arial, Helvetica, sans-serif;
+  color: #333;
+  line-height: 1.125rem;
+  font-weight: bold;
+}
+p {
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
+.avgBanner-controls .avgContent .avgHeading-2 {
+  color: #ea7024;
+  display: block;
+  font-weight: bold;
+}
+
+.avgHeading-2 {
+  color: #ea7024;
+  display: block;
+  font-weight: bold;
+  margin-left: 0px;
+  font-size: 1.25rem;
+}
+
+.avgHeading-3 {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.keyFeature {
+  display: flex;
+  width: 50%;
+}
+
+.discountImage {
+  height: 5rem;
+  width: 5rem;
+}
+
+.CustomerServiceImage {
+  height: 5rem;
+  width: 5rem;
+}
+
+.FexiblePaymentImage {
+  height: 5rem;
+  width: 5rem;
+}
+
+.PortableMortgageImage {
+  height: 5rem;
+  width: 5rem;
+}
+
+.keyFeatures {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 5rem;
+}
+
+.keyFeatureHeading {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.keyFeatureHeadingContent {
+  font-weight: 100;
+  margin-left: 0.5rem;
+}
+.keyFeatureHeadingContent3 {
+  font-weight: 100;
+  margin-left: 0.5rem;
+  width: 70%;
+}
+
+span {
+  margin-left: 0.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .modalContainer {
+    width: 60%;
+    z-index: 5;
+    position: absolute;
+    margin: 0 auto;
+    border: 2px solid #ea7024;
+    margin: 0 0 0 20rem;
+    display: block;
+  }
+}
+
+.headerSection {
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-around;
+  padding: 2.5rem 0rem 0 12.5rem;
+}
+
+.headerText {
+  color: #333;
+  font-family: inherit;
+  font-size: 1.875rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 2.375rem;
+  margin: 0;
+  margin-right: 2.5rem;
+}
+
+.subhead {
+  color: #757575;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1.25rem;
+  margin: 0;
+  margin-top: 1rem;
+  margin-left: 15rem;
+}

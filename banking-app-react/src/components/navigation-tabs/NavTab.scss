@@ -1,0 +1,43 @@
+@use "../../styles/Palette.css";
+
+nav.nav-underline {
+	--bs-nav-underline-link-active-color: var(--avengers-orange);
+	--bs-nav-link-color: black;
+	--bs-nav-underline-gap: 0;
+
+	border-bottom: calc(var(--bs-nav-underline-border-width) * 2 / 3) solid var(--avengers-lightgray);
+
+	.nav-link {
+		padding-left: var(--bs-nav-link-padding-x);
+		padding-right: var(--bs-nav-link-padding-x);
+
+		&:hover {
+			color: var(--bs-nav-link-color);
+		}
+
+		&.active {
+			color: var(--bs-nav-underline-link-active-color);
+		}
+	}
+}
+
+nav.nav-progress {
+	--bs-nav-link-color: gray;
+
+	.nav-link {
+		--bs-nav-progress-border-color: var(--avengers-orange);
+		color: var(--bs-nav-link-color);
+		border-top: 3px solid var(--bs-nav-progress-border-color);
+
+
+		&.active {
+			--bs-nav-link-color: black;
+			font-weight: bold;
+		}
+
+		&.active, &.active ~ .nav-link  {
+			// --bs-nav-progress-border-color: var(--avengers-lightgray);
+			--bs-nav-progress-border-color: black;
+		}
+	}
+}
